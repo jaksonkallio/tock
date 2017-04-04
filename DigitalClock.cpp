@@ -22,8 +22,10 @@ std::string DigitalClock::getDisplayDigitRow(unsigned int number, unsigned int r
 
 	for(unsigned int i = 0; i <= 3; ++i){
 		if(digits[number][row][i]){
-			
-		} 
+			rowstr += draw_character;
+		}else{
+			rowstr += ' ';		
+		}
 	}
 	
 	return rowstr;
