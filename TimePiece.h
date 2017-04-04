@@ -1,0 +1,6 @@
+class TimePiece {
+private:
+	
+public:
+
+};
