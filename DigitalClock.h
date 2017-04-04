@@ -7,7 +7,7 @@ class DigitalClock: public TimePiece {
 private:
 
 public:
-
+	void refreshDisplay();
 };
 
 #endif
