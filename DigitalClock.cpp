@@ -14,3 +14,9 @@ void DigitalClock::refreshDisplay(){
 	std::cout << term_width << "\n";
 	std::cout << term_height << "\n";
 }
+
+std::string DigitalClock::getDisplayDigitRow(unsigned int number, unsigned int row) const{
+	std::string rowstr = "";
+	
+	return rowstr;
+}
