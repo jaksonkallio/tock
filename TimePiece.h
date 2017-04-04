@@ -1,6 +1,8 @@
+#include <ctime>
+
 class TimePiece {
 private:
-	
-public:
 
+public:
+	time_t getTime() const;
 };
