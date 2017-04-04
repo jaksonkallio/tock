@@ -1,4 +1,7 @@
 #include <ctime>
+#include <sys/ioctl.h>
+#include <stdio.h>
+#include <unistd.h>
 #include "TimePiece.h"
 
 unsigned int TimePiece::getTime(timeframe_t timeframe) const{
@@ -22,4 +25,15 @@ unsigned int TimePiece::getTime(timeframe_t timeframe) const{
 	}
 
 	return 0;
+}
+
+void TimePiece::gatherTerminalStats(){
+	struct winsize w;
+	ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
+	terminal_width = w.ws_col;
+	terminal_height = w.ws_row;
+}
+
+void TimePiece::refreshDisplay(){
+
 }
