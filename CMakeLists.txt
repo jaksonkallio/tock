@@ -6,4 +6,5 @@ add_executable(
 	tock
 	main.cpp
 	TimePiece.cpp
+	DigitalClock.cpp
 )
