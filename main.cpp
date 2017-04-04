@@ -6,5 +6,7 @@ int main(){
 	TimePiece tock;
 	tock = DigitalClock();
 
+	tock.refreshDisplay();
+	
 	return EXIT_SUCCESS;
 }
