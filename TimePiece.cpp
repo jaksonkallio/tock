@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <tuple>
+#include <iostream>
 #include "TimePiece.h"
 
 unsigned int TimePiece::getTime(timeframe_t timeframe) const{
@@ -35,5 +36,5 @@ std::tuple<int, int> TimePiece::gatherTerminalStats(){
 }
 
 void TimePiece::refreshDisplay(){
-
+	std::cout << "refresh display for TimePiece called.\n";
 }
