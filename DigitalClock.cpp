@@ -2,6 +2,8 @@
 #include <tuple>
 #include "DigitalClock.h"
 
+
+
 void DigitalClock::refreshDisplay(){
 	int sec = getTime(SEC);
 	int min = getTime(MIN);
@@ -17,6 +19,12 @@ void DigitalClock::refreshDisplay(){
 
 std::string DigitalClock::getDisplayDigitRow(unsigned int number, unsigned int row) const{
 	std::string rowstr = "";
+
+	for(unsigned int i = 0; i <= 3; ++i){
+		if(digits[number][row][i]){
+			
+		} 
+	}
 	
 	return rowstr;
 }
