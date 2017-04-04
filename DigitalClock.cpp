@@ -6,10 +6,10 @@ void DigitalClock::refreshDisplay(){
 	int sec = getTime(SEC);
 	int min = getTime(MIN);
 	int hour = getTime(HOUR);
-	int term_height;
-	int term_width;
+	int term_width;	
+	int term_height;	
 
-	std::tie(term_height, term_width) = gatherTerminalStats();
+	std::tie(term_width, term_height) = gatherTerminalStats();
 	
 	std::cout << term_width << "\n";
 	std::cout << term_height << "\n";

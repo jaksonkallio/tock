@@ -32,7 +32,7 @@ unsigned int TimePiece::getTime(timeframe_t timeframe) const{
 std::tuple<int, int> TimePiece::gatherTerminalStats(){
 	struct winsize w;
 	ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
-	return std::make_tuple(w.ws_col, w.ws_col);
+	return std::make_tuple(w.ws_col, w.ws_row);
 }
 
 void TimePiece::refreshDisplay(){
