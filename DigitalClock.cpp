@@ -59,14 +59,25 @@ void DigitalClock::refreshDisplay(){
 	int min = getTime(MIN);
 	int hour = getTime(HOUR);
 	int clock_display_width(12);
+	int centering_offset;
 	int term_width;
 	int term_height;
 
 	std::tie(term_width, term_height) = gatherTerminalStats();
 
+	if(hour >= 10){
+		clock_display_width += 3;
+	}
+
+	centering_offset = (int)(term_width / 2);
+	centering_offset -= (int)(clock_display_width / 2);
+
 	for(unsigned int i = 1; i <= 5; ++i){
+		for(unsigned int j = 0; j < centering_offset; ++j){
+			std::cout << " ";
+		}
+
 		if(hour >= 10){
-			clock_display_width += 3;
 			std::cout << getDisplayDigitRow((int)(hour / 10), i);
 			std::cout << " ";
 			std::cout << getDisplayDigitRow(hour % 10, i);
