@@ -38,3 +38,11 @@ std::tuple<int, int> TimePiece::gatherTerminalStats(){
 void TimePiece::refreshDisplay(){
 	std::cout << "refresh display for TimePiece called.\n";
 }
+
+bool TimePiece::getShowDate() const{
+	return show_date;
+}
+
+void TimePiece::drawDate() const{
+
+}

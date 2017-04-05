@@ -86,6 +86,10 @@ void DigitalClock::refreshDisplay(){
 		std::cout << getDisplayDigitRow(min % 10, i);
 		std::cout << "\n";
 	}
+
+	if(getShowDate()){
+		drawDate();
+	}
 }
 
 std::string DigitalClock::getDisplayDigitRow(unsigned int number, unsigned int row) const{
