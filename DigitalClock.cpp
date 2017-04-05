@@ -63,11 +63,28 @@ void DigitalClock::refreshDisplay(){
 
 	std::tie(term_width, term_height) = gatherTerminalStats();
 
-	for(unsigned int i = 1; i < 5; ++i){
+	for(unsigned int i = 1; i <= 5; ++i){
 		if(hour >= 10){
-			//std::cout << getDisplayDigitRow(, i);
+			std::cout << getDisplayDigitRow((int)(hour / 10), i);
+			std::cout << " ";
+			std::cout << getDisplayDigitRow(hour % 10, i);
+		}else{
+			std::cout << getDisplayDigitRow(hour, i);
 		}
 
+		std::cout << " ";
+
+		if(i == 2 || i == 4){
+			std::cout << draw_character;
+		}else{
+			std::cout << " ";
+		}
+
+		std::cout << " ";
+		std::cout << getDisplayDigitRow((int)(min / 10), i);
+		std::cout << " ";
+		std::cout << getDisplayDigitRow(min % 10, i);
+		std::cout << "\n";
 	}
 }
 
