@@ -11,14 +11,16 @@ private:
 	bool clock24h = false;
 	bool show_date = true;
 	bool show_sec = true;
-	unsigned int terminal_width = 0;
-	unsigned int terminal_height = 0;
+	bool center_vert = true;
+	bool center_hor = true;
 protected:
 	std::tuple<int, int> gatherTerminalStats();
 public:
 	unsigned int getTime(timeframe_t timeframe) const;
 	virtual void refreshDisplay();
 	bool getShowDate() const;
+	bool getCenterVert() const;
+	bool getCenterHor() const;
 	void drawDate() const;
 };
 

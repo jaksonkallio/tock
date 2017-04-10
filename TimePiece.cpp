@@ -43,6 +43,14 @@ bool TimePiece::getShowDate() const{
 	return show_date;
 }
 
+bool TimePiece::getCenterVert() const{
+	return center_vert;
+}
+
+bool TimePiece::getCenterHor() const{
+	return center_hor;
+}
+
 void TimePiece::drawDate() const{
 
 }
