@@ -51,15 +51,16 @@ bool const DigitalClock::digits[10][5][3] =
  {{1, 1, 1},
 	{1, 0, 1},
 	{1, 1, 1},
-  {0, 0, 1},
+	{0, 0, 1},
 	{0, 0, 1}}};
 
 void DigitalClock::refreshDisplay(){
-	int sec = getTime(SEC);
 	int min = getTime(MIN);
 	int hour = getTime(HOUR);
 	int clock_display_width(12);
+	int clock_display_height(5);
 	int centering_offset;
+	int centering_offset_vert;
 	int term_width;
 	int term_height;
 
@@ -72,9 +73,20 @@ void DigitalClock::refreshDisplay(){
 	centering_offset = (int)(term_width / 2);
 	centering_offset -= (int)(clock_display_width / 2);
 
+	centering_offset_vert = (int)(term_height / 2);
+	centering_offset_vert -= (int)(clock_display_height / 2);
+
+	if(getCenterVert()){
+		for(unsigned int i = 0; i < centering_offset_vert; ++i){
+			std::cout << "\n";
+		}
+	}
+
 	for(unsigned int i = 1; i <= 5; ++i){
-		for(unsigned int j = 0; j < centering_offset; ++j){
-			std::cout << " ";
+		if(getCenterHor()){
+			for(unsigned int j = 0; j < centering_offset; ++j){
+				std::cout << " ";
+			}
 		}
 
 		if(hour >= 10){
@@ -108,7 +120,7 @@ void DigitalClock::refreshDisplay(){
 std::string DigitalClock::getDisplayDigitRow(unsigned int number, unsigned int row) const{
 	std::string rowstr = "";
 
-	if(!(row >= 1 && row <= 5 && number >= 0 && number <= 9)){
+	if(!(row >= 1 && row <= 5 && number <= 9)){
 		throw 101;
 	}
 
